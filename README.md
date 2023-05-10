@@ -21,7 +21,7 @@
 
 **Link to the GitHub repository with the repro**
 
-[https://github.com/your_profile/playwright_issue_title]
+[https://github.com/cb0806151/playwright-chromium-flag-issue]
 
 <!-- or
 

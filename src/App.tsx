@@ -4,7 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isCameraOn, setIsCameraOn] = useState(false)
+
+  const toggleCamera = () => {
+    navigator.mediaDevices
+    .getUserMedia({ video: false, audio: true })
+    .then((stream) => {
+      setIsCameraOn(true)
+    })
+    .catch((err) => {
+      console.error(`you got an error: ${err}`);
+    });
+  }
 
   return (
     <>
@@ -18,9 +29,12 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={toggleCamera}>
+          turn camera on
         </button>
+        {isCameraOn && <button>
+          turn camera off
+        </button>}
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

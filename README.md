@@ -54,8 +54,10 @@ it('should check the box using setChecked', async ({ page }) => {
 - Clone the repository
 - Run `yarn install`
 - Run `yarn pt`
-- Change headless to true in the config file
-- Run `yarn pt` again to observe issue
+- Observe that the test passes
+- Change headless to true in the playwright config file
+- Run `yarn pt` again
+- Observe that the test fails
 
 **Expected**
 
